@@ -6,10 +6,12 @@ function addNewDivs() {
         for (let i = 0; i < 16; i++) {
             const newDiv = document.createElement("div");
             newDiv.classList.add("grid-child");
+            newDiv.innerHTML = i+1;
             container.appendChild(newDiv);
         }
     } else {
         console.error("The parent div was not found");
     }
 }
+
 addNewDivs();

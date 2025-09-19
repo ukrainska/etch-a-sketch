@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.grid-child {
+    font-size: 1.3rem;
+    padding: 1.3rem;
+}
+.grid-child:hover {
+    background-color: #CC8374;
+
+}

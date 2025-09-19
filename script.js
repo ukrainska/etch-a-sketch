@@ -51,6 +51,18 @@ function setEvenSize(size)  {
     }
 }
 
-button.addEventListener("click", setGridSize);
+function getRandomRGB() {
+    const r = Math.floor(Math.random() * 256); // 0–255
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
+button.addEventListener("click", setGridSize);
 addNewDivs();
+
+container.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("grid-child")) {
+        e.target.style.backgroundColor = getRandomRGB();
+    }
+})

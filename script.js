@@ -1,5 +1,5 @@
 const container = document.querySelector(".grid");
-const button = document.getElementById("grid_size");
+const button = document.getElementById("grid-size");
 const containerSize = 16;
 let gridSize = containerSize * containerSize;
 

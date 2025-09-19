@@ -17,9 +17,9 @@ function addNewDivs() {
 }
 
 function setGridSize () {
-    let answer = prompt("What size of the grid you prefer?");
+    let answer = parseInt(prompt("What size of the grid you prefer?"), 10);
 
-    if (isNaN(answer)) {
+    if (isNaN(answer) && answer <= 0) {
         alert("Please enter a valid number");
         return;
     }
@@ -34,11 +34,21 @@ function setGridSize () {
 
     removeGrid();
     addNewDivs(answer); 
+    setEvenSize(answer);
 } 
 
 
 function removeGrid() {
     container.innerHTML = "";
+}
+
+function setEvenSize(size)  {
+    const children = document.getElementsByClassName("grid-child");
+    
+    for (let child of children) {
+        child.style.width = `calc(100% / ${size})`;
+        child.style.height = `calc(100% / ${size})`;
+    }
 }
 
 button.addEventListener("click", setGridSize);

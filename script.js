@@ -18,20 +18,28 @@ function addNewDivs() {
 
 function setGridSize () {
     let answer = prompt("What size of the grid you prefer?");
-    console.log("Grid size set to:", gridSize);
+
     if (isNaN(answer)) {
         alert("Please enter a valid number");
         return;
     }
 
-    if (answer < 100) {
-        gridSize = answer * answer; 
-        console.log("Grid size set to:", gridSize);
-        addNewDivs();
-    } else {
+    if (answer >= 100) {
         alert("The number should be less than 100");
+        return;
     }
+
+    gridSize = answer * answer; 
+    console.log("Grid size set to:", gridSize);
+
+    removeGrid();
+    addNewDivs(answer); 
 } 
+
+
+function removeGrid() {
+    container.innerHTML = "";
+}
 
 button.addEventListener("click", setGridSize);
 
